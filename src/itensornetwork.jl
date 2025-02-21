@@ -22,6 +22,7 @@ end
 
 data_graph(tn::ITensorNetwork) = getfield(tn, :data_graph)
 data_graph_type(TN::Type{<:ITensorNetwork}) = fieldtype(TN, :data_graph)
+tensors(tn::ITensorNetwork) = getfield(getfield(tn, :data_graph), :vertex_data)
 
 function DataGraphs.underlying_graph_type(TN::Type{<:ITensorNetwork})
   return fieldtype(data_graph_type(TN), :underlying_graph)

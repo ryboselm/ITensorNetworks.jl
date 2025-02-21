@@ -37,6 +37,8 @@ const TTN = TreeTensorNetwork
 ITensorNetwork(tn::TTN) = getfield(tn, :tensornetwork)
 ortho_region(tn::TTN) = getfield(tn, :ortho_region)
 
+tensors(tn::TTN) = tensors(getfield(tn, :tensornetwork))
+
 # Required for `AbstractITensorNetwork` interface
 data_graph(tn::TTN) = data_graph(ITensorNetwork(tn))
 
